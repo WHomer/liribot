@@ -17,4 +17,11 @@ function movieSearch(userInput) {
 var userCommand = process.argv[2];
 var userInput = process.argv[3];
 
-movieSearch('Matrix');
+//runs the movie search
+if (userCommand === 'movie-search'){
+	//Adds all words together. 
+	for(i=4; i<process.argv.length; i++){
+		userInput += '+' + process.argv[i];
+	}
+	movieSearch(userInput);
+}
